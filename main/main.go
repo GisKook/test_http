@@ -15,7 +15,7 @@ func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	http.HandleFunc("/inl2/get_map_list", http_inl2.GetMapsHandler)
 
-	err := http.ListenAndServe(":8876", nil)
+	err := http.ListenAndServe(":7771", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe :", err)
 	}
