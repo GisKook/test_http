@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
 )
 
 type MapList struct {
@@ -19,13 +18,26 @@ type MapProperty struct {
 
 func GetMaps() string {
 	maps := make([]*MapProperty, 0)
-	for i := 1; i < 5; i++ {
-		maps = append(maps, &MapProperty{
-			MapUri:  uint64(i),
-			MapUrl:  "http://222.222.218.50:8886/zhanting/map.html",
-			MapName: "地图" + strconv.Itoa(i),
-		})
-	}
+	maps = append(maps, &MapProperty{
+		MapUri:  4,
+		MapUrl:  "http://222.222.218.51:8888/cgi-bin/hospital/qgis_mapserv.fcgi",
+		MapName: "仁爱医院4",
+	})
+	maps = append(maps, &MapProperty{
+		MapUri:  3,
+		MapUrl:  "http://222.222.218.51:8888/cgi-bin/room/qgis_mapserv.fcgi",
+		MapName: "展厅3",
+	})
+	maps = append(maps, &MapProperty{
+		MapUri:  1,
+		MapUrl:  "http://222.222.218.51:8888/cgi-bin/hospital/qgis_mapserv.fcgi",
+		MapName: "展厅1",
+	})
+	maps = append(maps, &MapProperty{
+		MapUri:  2,
+		MapUrl:  "http://222.222.218.51:8888/cgi-bin/prison/qgis_mapserv.fcgi",
+		MapName: "鹿泉监狱2",
+	})
 	map_list := &MapList{
 		MapList: maps,
 	}
